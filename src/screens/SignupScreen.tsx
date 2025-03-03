@@ -12,29 +12,35 @@ import ReusableButton from "../ui/ReusableButton";
 import TextInputDisplay from "../ui/TextInputDisplay";
 import VerticalLine from "../ui/VerticalLine";
 import SocialButton from "../ui/SocialButton";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { NativeStackNavigatorProps, NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../navigation/StackNavigator";
 import { RouteProp } from "@react-navigation/native";
 
-type Props = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>
+type Props = NativeStackScreenProps<RootStackParamList, 'SignupScreen'>
 
-const LoginScreen = ({ route, navigation }: Props) => {
+const SignupScreen = ({ route, navigation }: Props) => {
     return (
         <View style={styles.container}>
             {/* HERO */}
             <View>
                 <Text>
-                    Login here
+                    Create an account
                 </Text>
             </View>
 
             {/* Input Fields */}
             <View style={styles.inputContainer}>
                 <TextInputDisplay 
+                    placeholder="email"
+                />
+                <TextInputDisplay 
                     placeholder="username"
                 />
                 <TextInputDisplay 
                     placeholder="password"
+                />
+                <TextInputDisplay 
+                    placeholder="confirm password"
                 />
             </View>
 
@@ -44,7 +50,7 @@ const LoginScreen = ({ route, navigation }: Props) => {
 
             <View style={styles.orContainer}>
                 <Text style={styles.orText}>
-                    or login with socials
+                    or sign up with socials
                 </Text>
             </View>
 
@@ -62,14 +68,14 @@ const LoginScreen = ({ route, navigation }: Props) => {
 
             <View style={styles.newUserContainer}>
                 <Text style={styles.newUserText}>
-                    Are you new user? Register now!
+                    Existing account? Sign In!
                 </Text>
                 <View style={styles.registerContainer}>
                     <ReusableButton 
-                        onPress={() =>
-                            navigation.navigate('SignupScreen')
+                        onPress={() => 
+                            navigation.navigate('LoginScreen')
                         }
-                        title="Register"
+                        title="Sign In"
                     />
                 </View>
             </View>
@@ -77,7 +83,7 @@ const LoginScreen = ({ route, navigation }: Props) => {
     );
 };
 
-export default LoginScreen;
+export default SignupScreen;
 
 const styles = StyleSheet.create({
     container: {

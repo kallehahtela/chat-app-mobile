@@ -8,12 +8,14 @@ import {
 
 type ReusableButtonProps = {
     title: string;
+    onPress?(): void;
 };
 
 function ReusableButton(props: ReusableButtonProps) {
     return (
         <View style={styles.container}>
-            <TouchableOpacity 
+            <TouchableOpacity
+                onPress={props.onPress}
                 style={styles.btnContainer}
             >
                 <Text

@@ -9,20 +9,16 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
+import SignupScreen from './src/screens/SignupScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import RootStack from './src/navigation/StackNavigator';
 
 export default function App() {
   return (
-    <TouchableWithoutFeedback
-      onPress={Keyboard.dismiss}
-      accessible={false}
-    >
-      <SafeAreaView style={styles.safeArea}>
-        <View style={styles.container}>
-          <LoginScreen />
-          <StatusBar style="auto" />
-        </View>
-      </SafeAreaView>
-    </TouchableWithoutFeedback>
+    <NavigationContainer>
+      <StatusBar style='dark' />
+      <RootStack />
+    </NavigationContainer>
   );
 };
 
