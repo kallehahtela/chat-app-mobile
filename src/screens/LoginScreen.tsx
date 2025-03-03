@@ -61,15 +61,28 @@ const LoginScreen = ({ route, navigation }: Props) => {
             </View>
 
             <View style={styles.newUserContainer}>
-                <Text style={styles.newUserText}>
-                    Are you new user? Register now!
-                </Text>
+                <View style={styles.newUserTextContainer}>
+                    <Text style={styles.newUserText}>
+                        Are you new user? 
+                    </Text>
+                    
+                    <TouchableOpacity
+                        onPress={() => 
+                            navigation.navigate('SignupScreen')
+                        }
+                    >
+                        <Text style={styles.newUserBtn}>
+                            Register now!
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+
                 <View style={styles.registerContainer}>
                     <ReusableButton 
                         onPress={() =>
-                            navigation.navigate('SignupScreen')
+                            navigation.navigate('HomeScreen')
                         }
-                        title="Register"
+                        title="Login"
                     />
                 </View>
             </View>
@@ -112,12 +125,22 @@ const styles = StyleSheet.create({
         marginTop: 50,
         justifyContent: 'center',
         alignItems: 'center',
+        flexDirection: 'column',
+    },
+    newUserTextContainer: {
+        flexDirection: 'row',
+        gap: 7,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     newUserText: {
         fontSize: 15,
         fontWeight: '400'
     },
+    newUserBtn: {
+        color: '#285affcf',
+    },
     registerContainer: {
 
-    }
+    },
 });

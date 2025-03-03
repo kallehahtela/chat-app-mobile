@@ -6,11 +6,13 @@ import {
 import WelcomeScreen from "../screens/WelcomeScreen";
 import LoginScreen from "../screens/LoginScreen";
 import SignupScreen from "../screens/SignupScreen";
+import HomeScreen from "../screens/HomeScreen";
 
 export type RootStackParamList = {
     WelcomeScreen: undefined;
     LoginScreen: undefined;
     SignupScreen: undefined;
+    HomeScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -34,6 +36,10 @@ function RootStack() {
             <Stack.Screen 
                 name='SignupScreen'
                 component={SignupScreen}
+            />
+            <Stack.Screen 
+                name='HomeScreen'
+                component={HomeScreen}
             />
         </Stack.Navigator>
     );

@@ -28,6 +28,18 @@ const WelcomeScreen = ({ route, navigation}: Props) => {
                     }
                     title="Login"
                 />
+                <ReusableButton 
+                    onPress={() =>
+                        navigation.navigate('SignupScreen')
+                    }
+                    title="Sign Up"
+                />
+            </View>
+
+            <View style={styles.versionContainer}>
+                <Text style={styles.versionText}>
+                    version 0.1.0
+                </Text>
             </View>
         </View>
     );
@@ -42,5 +54,13 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    versionContainer: {
+        position: 'absolute',
+        bottom: 50,
+    },
+    versionText: {
+        fontSize: 16,
+        fontWeight: '600',
     },
 });
